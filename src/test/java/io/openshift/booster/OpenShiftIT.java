@@ -4,6 +4,7 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 import org.arquillian.cube.openshift.impl.enricher.RouteURL;
 import org.jboss.arquillian.junit.Arquillian;
+import org.arquillian.cube.openshift.impl.enricher.AwaitRoute;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -25,6 +26,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class OpenShiftIT {
 
   @RouteURL("${app.name}")
+  @AwaitRoute
   private URL route;
 
   @Before
