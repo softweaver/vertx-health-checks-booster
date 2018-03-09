@@ -102,7 +102,7 @@ objects:
       expose: "true"
       app: health-check-vertx
       provider: fabric8
-      version: "18"
+      version: 19-SNAPSHOT
       group: io.openshift.booster
     name: health-check-vertx
   spec:
@@ -119,7 +119,7 @@ objects:
   kind: DeploymentConfig
   metadata:
     annotations:
-      fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=health-check-vertx&var-version=18
+      fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=health-check-vertx&var-version=19-SNAPSHOT
       fabric8.io/scm-con-url: scm:git:https://github.com/openshiftio/booster-parent.git/health-check-vertx
       fabric8.io/scm-url: https://github.com/openshiftio/health-check-vertx
       fabric8.io/iconUrl: img/icons/vertx.svg
@@ -129,7 +129,7 @@ objects:
     labels:
       app: health-check-vertx
       provider: fabric8
-      version: "18"
+      version: 19-SNAPSHOT
       group: io.openshift.booster
     name: health-check-vertx
   spec:
@@ -146,7 +146,7 @@ objects:
     template:
       metadata:
         annotations:
-          fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=health-check-vertx&var-version=18
+          fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=health-check-vertx&var-version=19-SNAPSHOT
           fabric8.io/scm-con-url: scm:git:https://github.com/openshiftio/booster-parent.git/health-check-vertx
           fabric8.io/scm-url: https://github.com/openshiftio/health-check-vertx
           fabric8.io/iconUrl: img/icons/vertx.svg
@@ -156,7 +156,7 @@ objects:
         labels:
           app: health-check-vertx
           provider: fabric8
-          version: "18"
+          version: 19-SNAPSHOT
           group: io.openshift.booster
       spec:
         containers:
@@ -206,7 +206,7 @@ objects:
     labels:
       app: health-check-vertx
       provider: fabric8
-      version: "18"
+      version: 19-SNAPSHOT
       group: io.openshift.booster
     name: health-check-vertx
   spec:
