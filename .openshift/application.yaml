@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Template
 metadata:
-  name: vertx-health-check-booster
+  name: vertx-health-check-example
   annotations:
     description: This template creates a Vert.x application providing health check endpoint to be consumed by Kubernetes.
     tags: instant-app
@@ -33,7 +33,7 @@ objects:
   metadata:
     name: health-check-vertx
     labels:
-      booster: health-check-vertx
+      example: health-check-vertx
   spec: {}
 
 - apiVersion: v1
@@ -41,7 +41,7 @@ objects:
   metadata:
     name: runtime-health-check-vertx
     labels:
-      booster: health-check-vertx
+      example: health-check-vertx
   spec:
     tags:
     - name: latest
@@ -54,7 +54,7 @@ objects:
   metadata:
     name: health-check-vertx
     labels:
-      booster: health-check-vertx
+      example: health-check-vertx
   spec:
     output:
       to:
@@ -94,7 +94,7 @@ objects:
       prometheus.io/scrape: "true"
     labels:
       app: health-check-vertx
-      group: io.openshift.booster
+      group: io.openshift.example
     name: health-check-vertx
   spec:
     ports:
@@ -104,25 +104,25 @@ objects:
       targetPort: 8080
     selector:
       app: health-check-vertx
-      group: io.openshift.booster
+      group: io.openshift.example
 
 - apiVersion: apps.openshift.io/v1
   kind: DeploymentConfig
   metadata:
     labels:
       app: health-check-vertx
-      group: io.openshift.booster
+      group: io.openshift.example
     name: health-check-vertx
   spec:
     replicas: 1
     selector:
       app: health-check-vertx
-      group: io.openshift.booster
+      group: io.openshift.example
     template:
       metadata:
         labels:
           app: health-check-vertx
-          group: io.openshift.booster
+          group: io.openshift.example
       spec:
         containers:
         - env:
@@ -177,7 +177,7 @@ objects:
   metadata:
     labels:
       app: health-check-vertx
-      group: io.openshift.booster
+      group: io.openshift.example
     name: health-check-vertx
   spec:
     port:
