@@ -11,7 +11,7 @@
   <description>Demonstrates health check probes using Vert.x</description>
 
   <properties>
-    <vertx.version>3.7.1</vertx.version>
+    <vertx.version>3.8.0</vertx.version>
     <vertx-maven-plugin.version>1.0.20</vertx-maven-plugin.version>
     <vertx.verticle>io.openshift.example.HttpApplication</vertx.verticle>
 
