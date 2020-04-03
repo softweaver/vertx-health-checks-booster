@@ -9,7 +9,7 @@ fi
 source .openshift/openshift.sh
 
 if [ -z "$1" ]; then
-  ORG="openshift-vertx-boosters"
+  ORG="openshift-vertx-examples"
 else
   ORG=$1
 fi
