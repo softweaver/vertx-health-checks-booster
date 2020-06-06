@@ -1,7 +1,7 @@
 package io.openshift.example;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.healthchecks.HealthCheckHandler;
 import io.vertx.ext.healthchecks.Status;
@@ -18,7 +18,7 @@ public class HttpApplication extends AbstractVerticle {
   private boolean online = false;
 
   @Override
-  public void start(Future<Void> future) {
+  public void start(Promise<Void> promise) {
     Router router = Router.router(vertx);
 
     HealthCheckHandler healthCheckHandler = HealthCheckHandler.create(vertx)
@@ -36,7 +36,7 @@ public class HttpApplication extends AbstractVerticle {
       .listen(
         config().getInteger("http.port", 8080), ar -> {
           online = ar.succeeded();
-          future.handle(ar.mapEmpty());
+          promise.handle(ar.mapEmpty());
         });
   }
 
