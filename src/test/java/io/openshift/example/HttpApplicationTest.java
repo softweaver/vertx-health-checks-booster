@@ -1,4 +1,4 @@
-package io.openshift.booster;
+package io.openshift.example;
 
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
